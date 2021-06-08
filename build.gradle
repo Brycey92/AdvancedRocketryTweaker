@@ -40,6 +40,17 @@ repositories {
 minecraft {
     version = "${project.mcVersion}-${project.forgeVersion}"
     runDir = "eclipse"
+	
+	replace "@MODID@", project.modId
+	replace "@MODNAME@", project.modName
+	replace "@VERSION@", project.version
+	replace "@MCVERSION@", project.mcVersion
+	replace "@FORGEVERSION@", project.forgeVersion
+	replace "@ARVERSION@", project.arVersion
+	replace "@ARBUILD@", project.arBuild
+	replace "@JEIVERSION@", project.jeiVersion
+	replaceIn "ARTweaker.java"
+	replaceIn "ModGlobals.java"
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
