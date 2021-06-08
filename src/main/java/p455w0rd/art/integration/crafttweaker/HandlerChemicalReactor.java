@@ -7,13 +7,14 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.liquid.ILiquidStack;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import p455w0rd.art.init.ModGlobals;
 import p455w0rd.art.integration.CraftTweaker;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import zmaster587.advancedRocketry.tile.multiblock.machine.TileChemicalReactor;
 
-@ZenClass("mods.advancedrocketry.ChemicalReactor")
-@ModOnly("advancedrocketry")
+@ZenClass(ModGlobals.ZENCLASSES.CHEMICALREACTOR_HANDLER)
+@ModOnly(ModGlobals.AR_MODID)
 @ZenRegister
 public class HandlerChemicalReactor extends CraftTweaker {
    private static HandlerChemicalReactor INSTANCE;

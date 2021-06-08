@@ -4,13 +4,14 @@ import com.blamejared.mtlib.helpers.InputHelper;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.liquid.ILiquidStack;
+import p455w0rd.art.init.ModGlobals;
 import p455w0rd.art.integration.CraftTweaker;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import zmaster587.advancedRocketry.tile.multiblock.machine.TileElectrolyser;
 
-@ZenClass("mods.advancedrocketry.Electrolyser")
-@ModOnly("advancedrocketry")
+@ZenClass(ModGlobals.ZENCLASSES.ELECTROLYSER_HANDLER)
+@ModOnly(ModGlobals.AR_MODID)
 @ZenRegister
 public class HandlerElectrolyser extends CraftTweaker {
    private static HandlerElectrolyser INSTANCE;

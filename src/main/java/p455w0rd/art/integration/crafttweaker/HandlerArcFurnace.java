@@ -5,13 +5,14 @@ import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import net.minecraft.item.ItemStack;
+import p455w0rd.art.init.ModGlobals;
 import p455w0rd.art.integration.CraftTweaker;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import zmaster587.advancedRocketry.tile.multiblock.machine.TileElectricArcFurnace;
 
-@ZenClass("mods.advancedrocketry.ArcFurnace")
-@ModOnly("advancedrocketry")
+@ZenClass(ModGlobals.ZENCLASSES.ARCFURNACE_HANDLER)
+@ModOnly(ModGlobals.AR_MODID)
 @ZenRegister
 public class HandlerArcFurnace extends CraftTweaker {
    private static HandlerArcFurnace INSTANCE;

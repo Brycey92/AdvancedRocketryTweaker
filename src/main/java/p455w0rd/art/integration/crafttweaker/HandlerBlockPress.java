@@ -6,13 +6,14 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import net.minecraft.item.ItemStack;
+import p455w0rd.art.init.ModGlobals;
 import p455w0rd.art.integration.CraftTweaker;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import zmaster587.advancedRocketry.block.BlockPress;
 
-@ZenClass("mods.advancedrocketry.PlatePresser")
-@ModOnly("advancedrocketry")
+@ZenClass(ModGlobals.ZENCLASSES.PLATEPRESSER_HANDLER)
+@ModOnly(ModGlobals.AR_MODID)
 @ZenRegister
 public class HandlerBlockPress extends CraftTweaker {
    private static HandlerBlockPress INSTANCE;
