@@ -17,12 +17,12 @@ import zmaster587.advancedRocketry.tile.multiblock.machine.TileRollingMachine;
 @ZenClass("mods.advancedrocketry.RollingMachine")
 @ModOnly("advancedrocketry")
 @ZenRegister
-public class HandlerRollingMachne extends CraftTweaker {
-   private static HandlerRollingMachne INSTANCE;
+public class HandlerRollingMachine extends CraftTweaker {
+   private static HandlerRollingMachine INSTANCE;
 
-   public static HandlerRollingMachne getInstance() {
+   public static HandlerRollingMachine getInstance() {
       if (INSTANCE == null) {
-         INSTANCE = new HandlerRollingMachne();
+         INSTANCE = new HandlerRollingMachine();
       }
 
       return INSTANCE;
