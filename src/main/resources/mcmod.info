@@ -1,0 +1,17 @@
+[
+{
+  "modid": "${modId}",
+  "name": "${modName}",
+  "description": "An addon for Advanced Rocketry that allows recipe modification via CraftTweaker scripts.",
+  "version": "${modVersion}",
+  "mcversion": "${mcVersion}",
+  "url": "https://github.com/Brycey92/AdvancedRocketryTweaker/",
+  "updateUrl": "",
+  "authorList": ["Brycey92", "p455w0rd"],
+  "credits": ["Morpheus11011"],
+  "logoFile": "assets/${modId}/textures/icon.png",
+  "screenshots": [],
+  "dependencies": ["mtlib", "crafttweaker", "advancedrocketry"],
+  "dependants": []
+}
+]
