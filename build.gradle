@@ -79,6 +79,7 @@ dependencies {
 	//deobfCompile "mezz.jei:jei_${mcVersion}:${jeiVersion}"
 	deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:${ctVersion}"
 	deobfCompile "com.blamejared:MTLib:3.0.5.15"
+	deobfCompile "libvulpes:LibVulpes-${mcVersion}-${lvVersion}:deobf"
 	deobfCompile "advanced-rocketry:AdvancedRocketry-${mcVersion}-${arVersion}:${arBuild}:deobf"
 
     // for more info...
