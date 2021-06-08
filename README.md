@@ -1,5 +1,5 @@
 # Advanced Rocketry Tweaker
-An addon for Advanced Rocketry that allows recipe modification via CraftTweaker scripts.
+An addon for Advanced Rocketry that allows recipe modification via CraftTweaker scripts. Original mod by [p455w0rd](https://github.com/p455w0rd/).
 
 ## Sample Script
 
