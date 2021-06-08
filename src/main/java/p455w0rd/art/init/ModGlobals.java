@@ -7,11 +7,10 @@ public class ModGlobals {
   public static final String MCVERSION = "@MCVERSION@";
   public static final String AR_MODID = "advancedrocketry";
   public static final String CT_MODID = "crafttweaker";
-  public static final String DEP_LIST = "required-after:" + AR_MODID + "@[@ARVERSION@,2.0.0);required-after:jei@[@JEIVERSION@,);required-after:" + CT_MODID + ";required-after:mtlib;";
+  public static final String DEP_LIST = "required-after:" + AR_MODID + "@[@ARVERSION@-@ARBUILD@,);required-after:jei@[@JEIVERSION@,);required-after:" + CT_MODID + ";required-after:mtlib;";
   
   public static class ZENCLASSES {
     private static final String AR_ZENCLASS_BASE = "mods." + AR_MODID + ".";
-    public static final String BLOCKPRESS_HANDLER = AR_ZENCLASS_BASE + "BlockPress";
     public static final String CHEMICALREACTOR_HANDLER = AR_ZENCLASS_BASE + "ChemicalReactor";
     public static final String PRECISIONASSEMBLER_HANDLER = AR_ZENCLASS_BASE + "PrecisionAssembler";
     public static final String CUTTINGMACHINE_HANDLER = AR_ZENCLASS_BASE + "CuttingMachine";

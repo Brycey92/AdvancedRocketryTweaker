@@ -10,7 +10,7 @@ import p455w0rd.art.init.ModGlobals;
 import p455w0rd.art.integration.CraftTweaker;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
-import zmaster587.advancedRocketry.block.BlockPress;
+import zmaster587.advancedRocketry.block.BlockSmallPlatePress;
 
 @ZenClass(ModGlobals.ZENCLASSES.PLATEPRESSER_HANDLER)
 @ModOnly(ModGlobals.AR_MODID)
@@ -27,7 +27,7 @@ public class HandlerBlockPress extends CraftTweaker {
    }
 
    public Class getRecipeClass() {
-      return BlockPress.class;
+      return BlockSmallPlatePress.class;
    }
 
    @ZenMethod
