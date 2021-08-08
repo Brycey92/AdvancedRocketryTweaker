@@ -40,7 +40,7 @@ public class HandlerChemicalReactor extends CraftTweaker {
    @ZenMethod
    public static void addRecipe(ILiquidStack output, int time, int power, Object... inputs) {
       FluidStack outputConverted = InputHelper.toFluid(output);
-      addRecipe((Object[])(new FluidStack[]{outputConverted}), time, power, convertFromCT(inputs));
+      addRecipe(new FluidStack[]{outputConverted}, time, power, convertFromCT(inputs));
    }
 
    @ZenMethod
@@ -67,10 +67,9 @@ public class HandlerChemicalReactor extends CraftTweaker {
    }
 
    private static void removeRecipe(ItemStack[][] output) {
-      if (output instanceof ItemStack[][]) {
+      if (output != null) {
          addAction(getInstance().new Remove(output));
       }
-
    }
 
    private static void removeRecipe(FluidStack[] output) {

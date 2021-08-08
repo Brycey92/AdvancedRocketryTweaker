@@ -18,7 +18,7 @@ import zmaster587.libVulpes.recipe.NumberedOreDictStack;
 import zmaster587.libVulpes.recipe.RecipesMachine;
 
 public class CraftTweaker {
-   protected static final List<IAction> LATE_ACTIONS = new LinkedList();
+   protected static final LinkedList<IAction> LATE_ACTIONS = new LinkedList<>();
    private static CraftTweaker INSTANCE;
 
    public Class getRecipeClass() {
@@ -66,24 +66,21 @@ public class CraftTweaker {
    }
 
    public String formatObjectArray(Object[] objArray) {
-      String ret = "";
+      StringBuilder ret = new StringBuilder();
       boolean first = true;
-      Object[] var4 = objArray;
-      int var5 = objArray.length;
 
-      for(int var6 = 0; var6 < var5; ++var6) {
-         Object obj = var4[var6];
+      for (Object obj : objArray) {
          if (!first) {
-            ret = ret + "; ";
+            ret.append("; ");
          }
 
-         ret = ret + this.formatObject(obj);
+         ret.append(this.formatObject(obj));
          if (first) {
             first = false;
          }
       }
 
-      return ret;
+      return ret.toString();
    }
 
    private String formatObject(Object obj) {
@@ -104,9 +101,9 @@ public class CraftTweaker {
 
    protected static Object[] convertFromCT(Object[] input) {
       if (input != null && input.length > 0) {
-         List vanillaFluids = new ArrayList();
-         List vanillaItems = new ArrayList();
-         List oreDicts = new ArrayList();
+         ArrayList<FluidStack> vanillaFluids = new ArrayList<>();
+         ArrayList<ItemStack> vanillaItems = new ArrayList<>();
+         ArrayList<NumberedOreDictStack> oreDicts = new ArrayList<>();
          Object[] returnObj = input;
          int objIndex = input.length;
 
@@ -258,11 +255,11 @@ public class CraftTweaker {
       final ItemStack[][] itemOutput;
 
       public Remove(FluidStack[] output) {
-         this(output, (ItemStack[][])null);
+         this(output, null);
       }
 
       public Remove(ItemStack[][] output) {
-         this((FluidStack[])null, output);
+         this(null, output);
       }
 
       public Remove(FluidStack[] fluidOutput, ItemStack[][] itemOutput) {
@@ -271,28 +268,23 @@ public class CraftTweaker {
       }
 
       private ItemStack[] getAllStacks(ItemStack[][] stacks) {
-         List stackList = new ArrayList();
-         ItemStack[][] var3 = stacks;
-         int var4 = stacks.length;
 
-         for(int var5 = 0; var5 < var4; ++var5) {
-            ItemStack[] stack = var3[var5];
-            ItemStack[] var7 = stack;
-            int var8 = stack.length;
+         ArrayList<ItemStack> stackList = new ArrayList<>();
 
-            for(int var9 = 0; var9 < var8; ++var9) {
-               ItemStack element = var7[var9];
+         for (ItemStack[] stack : stacks) {
+
+            for (ItemStack element : stack) {
                if (element != null) {
                   stackList.add(element);
                }
             }
          }
 
-         return (ItemStack[])stackList.toArray(new ItemStack[stackList.size()]);
+         return stackList.toArray(new ItemStack[0]);
       }
 
       private ItemStack[] getAllStacks(List list) {
-         return (ItemStack[])list.toArray(new ItemStack[list.size()]);
+         return (ItemStack[])list.toArray(new ItemStack[0]);
       }
 
       public boolean matches(IRecipe recipe) {
@@ -311,11 +303,8 @@ public class CraftTweaker {
                }
 
                for(i = 0; i < matchArray.length; ++i) {
-                  ItemStack[] var7 = recipeArray;
-                  int var8 = recipeArray.length;
 
-                  for(int var9 = 0; var9 < var8; ++var9) {
-                     ItemStack element = var7[var9];
+                  for (ItemStack element : recipeArray) {
                      ItemStack stack1 = matchArray[i].copy();
                      stack1.setCount(1);
                      ItemStack stack2 = element.copy();
@@ -339,7 +328,7 @@ public class CraftTweaker {
 
                for(i = 0; i < this.fluidOutput.length; ++i) {
                   for(int j = 0; j < recipe.getFluidOutputs().size(); ++j) {
-                     if (this.fluidOutput[i] != null && this.fluidOutput[i].getFluid() == ((FluidStack)recipe.getFluidOutputs().get(j)).getFluid()) {
+                     if (this.fluidOutput[i] != null && this.fluidOutput[i].getFluid() == recipe.getFluidOutputs().get(j).getFluid()) {
                         --numFluidsToMatch;
                      }
                   }

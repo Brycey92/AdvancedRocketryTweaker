@@ -37,7 +37,7 @@ public class HandlerBlockPress extends CraftTweaker {
 
    @ZenMethod
    public static void addRecipe(IItemStack output, IItemStack... inputs) {
-      addRecipe((Object[])(new ItemStack[]{InputHelper.toStack(output)}), 0, 0, (Object[])InputHelper.toStacks(inputs));
+      addRecipe(new ItemStack[]{InputHelper.toStack(output)}, 0, 0, (Object[]) InputHelper.toStacks(inputs));
    }
 
    protected static void addRecipe(Object[] output, int time, int power, Object... inputs) {
