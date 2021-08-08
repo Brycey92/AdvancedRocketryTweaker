@@ -5,7 +5,8 @@ import com.google.common.collect.Lists;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
-import java.util.List;
+
+import java.util.ArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -46,7 +47,7 @@ public class HandlerRollingMachine extends CraftTweaker {
    }
 
    private static void removeRecipe(ItemStack[][] output) {
-      if (output instanceof ItemStack[][]) {
+      if (output != null) {
          addAction(getInstance().new Remove(output));
       }
 
@@ -58,10 +59,10 @@ public class HandlerRollingMachine extends CraftTweaker {
    }
 
    private static void addRecipe(IItemStack[] output, int time, int power, int waterAmount, Object... inputs) {
-      List inputList = Lists.newArrayList(inputs);
+      ArrayList<Object> inputList = Lists.newArrayList(inputs);
       inputList.add(1, new FluidStack(FluidRegistry.WATER, waterAmount));
       ItemStack[] outputConverted = InputHelper.toStacks(output);
-      addRecipe(outputConverted, time, power, convertFromCT(inputList.toArray(new Object[inputList.size()])));
+      addRecipe(outputConverted, time, power, convertFromCT(inputList.toArray(new Object[0])));
    }
 
    protected static void addRecipe(Object[] output, int time, int power, Object... inputs) {

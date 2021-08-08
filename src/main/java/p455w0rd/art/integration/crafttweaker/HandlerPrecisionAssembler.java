@@ -51,7 +51,7 @@ public class HandlerPrecisionAssembler extends CraftTweaker {
    }
 
    private static void addRecipe(IItemStack[] output, int time, int power, Object... inputs) {
-      addRecipe((Object[])InputHelper.toStacks(output), time, power, convertFromCT(inputs));
+      addRecipe(InputHelper.toStacks(output), time, power, convertFromCT(inputs));
    }
 
    protected static void addRecipe(Object[] output, int time, int power, Object... inputs) {

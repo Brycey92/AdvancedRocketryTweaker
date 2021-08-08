@@ -31,7 +31,7 @@ public class HandlerArcFurnace extends CraftTweaker {
 
    @ZenMethod
    public static void addRecipe(IItemStack output, int time, int power, IItemStack... inputs) {
-      addRecipe((Object[])(new ItemStack[]{InputHelper.toStack(output)}), time, power, (Object[])InputHelper.toStacks(inputs));
+      addRecipe(new ItemStack[]{InputHelper.toStack(output)}, time, power, (Object[]) InputHelper.toStacks(inputs));
    }
 
    protected static void addRecipe(Object[] output, int time, int power, Object... inputs) {
@@ -46,10 +46,9 @@ public class HandlerArcFurnace extends CraftTweaker {
    }
 
    private static void removeRecipe(ItemStack[][] output) {
-      if (output instanceof ItemStack[][]) {
+      if (output != null) {
          addAction(getInstance().new Remove(output));
       }
-
    }
 
    @ZenMethod
