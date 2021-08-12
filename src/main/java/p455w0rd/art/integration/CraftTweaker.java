@@ -7,15 +7,14 @@ import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.oredict.IOreDictEntry;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import zmaster587.libVulpes.interfaces.IRecipe;
 import zmaster587.libVulpes.recipe.NumberedOreDictStack;
 import zmaster587.libVulpes.recipe.RecipesMachine;
+
+import java.util.*;
 
 public class CraftTweaker {
    protected static final LinkedList<IAction> LATE_ACTIONS = new LinkedList<>();
@@ -232,6 +231,14 @@ public class CraftTweaker {
 
    private static FluidStack toVanilla(ILiquidStack liquid) {
       return InputHelper.toFluid(liquid);
+   }
+
+   protected static Object[] concatArrays(Object[] array1, Object[] array2) {
+      List<Object> resultList = new ArrayList<>(array1.length + array2.length);
+      Collections.addAll(resultList, array1);
+      Collections.addAll(resultList, array2);
+
+      return resultList.toArray(new Object[0]);
    }
 
    protected class Clear implements IAction {
