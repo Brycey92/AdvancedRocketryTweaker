@@ -7,7 +7,7 @@ public class ModGlobals {
   public static final String MCVERSION = "@MCVERSION@";
   public static final String AR_MODID = "advancedrocketry";
   public static final String CT_MODID = "crafttweaker";
-  public static final String DEP_LIST = "required-after:" + AR_MODID + "@[1.12.2-@ARVERSION@-@ARBUILD@);required-after:jei@[@JEIVERSION@,);required-after:" + CT_MODID + ";required-after:mtlib;";
+  public static final String DEP_LIST = "required-after:" + AR_MODID + "@[1.12.2-@ARVERSION@-@ARBUILD@,);required-after:jei@[@JEIVERSION@,);required-after:" + CT_MODID + ";required-after:mtlib;";
   
   public static class ZENCLASSES {
     private static final String AR_ZENCLASS_BASE = "mods." + AR_MODID + ".";
